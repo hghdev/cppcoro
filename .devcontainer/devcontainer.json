@@ -1,0 +1,76 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
+{
+	"name": "cppcoro-cpp20-20231028",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": true,
+			"upgradePackages": true,
+			"username": "vscode",
+			"userUid": "automatic",
+			"userGid": "automatic"
+		},
+		"ghcr.io/devcontainers/features/desktop-lite:1": {
+			"version": "latest",
+			"noVncVersion": "1.2.0",
+			"password": "vscode",
+			"webPort": "6080",
+			"vncPort": "5901"
+		},
+		"ghcr.io/devcontainers/features/git:1": {
+			"version": "latest"
+		}
+	},
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	"forwardPorts": [ 5901,	6080 ],
+    "portsAttributes": {
+		"5901": {
+			"label": "Xtigervnc"
+		},
+		"6080": {
+			"label": "noVNC"
+		}
+	},
+    
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"asciidoctor.asciidoctor-vscode",
+				"donjayamanne.githistory",
+				"GitHub.copilot-chat",
+				"GitHub.copilot",
+				"Gruntfuggly.todo-tree",
+				"matepek.vscode-catch2-test-adapter",
+				"mhutchie.git-graph",
+				// "eamodio.gitlens",
+				"ms-azuretools.vscode-docker",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-vscode.hexeditor",
+				"ms-vscode.live-server",
+				"ms-vscode.makefile-tools",
+				"stkb.rewrap",
+				"timonwong.shellcheck",
+				"vadimcn.vscode-lldb"
+			]
+		}
+	}
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "gcc -v",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
