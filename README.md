@@ -3125,7 +3125,7 @@ ninja install-clang \
 
 ### Building libc++
 
-The cppcoro project requires libc++ as it contains the `<experimental/coroutine>`
+The cppcoro project requires libc++ as it contains the `<coroutine>`
 header required to use C++ coroutines under Clang.
 
 Checkout `libc++` + `llvm`:
