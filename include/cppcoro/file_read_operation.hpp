@@ -11,7 +11,7 @@
 
 #include <atomic>
 #include <optional>
-#include <experimental/coroutine>
+#include <coroutine>
 
 #if CPPCORO_OS_WINNT
 # include <cppcoro/detail/win32.hpp>
@@ -93,8 +93,7 @@ namespace cppcoro
 		file_read_operation_impl m_impl;
 
 	};
-
-#endif
 }
+#endif
 
 #endif

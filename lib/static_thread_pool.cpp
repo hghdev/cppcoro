@@ -12,6 +12,7 @@
 #include <cassert>
 #include <mutex>
 #include <chrono>
+#include <utility>
 
 namespace
 {
@@ -319,7 +320,7 @@ namespace cppcoro
 	};
 
 	void static_thread_pool::schedule_operation::await_suspend(
-		std::experimental::coroutine_handle<> awaitingCoroutine) noexcept
+		std::coroutine_handle<> awaitingCoroutine) noexcept
 	{
 		m_awaitingCoroutine = awaitingCoroutine;
 		m_threadPool->schedule_impl(this);
